@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>山野册页 · 五福小集｜齐云山南酸枣糕 × 小野人「云怡」</title>
+<meta name="description" content="齐云山南酸枣糕小程序交互原型：把 IP 形象云怡、五福印记与电商流程缝成一本可以买的册页。">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="paper-grain" aria-hidden="true"></div>
+<div class="stage">
+  <aside class="intro">
+    <div class="intro-top">
+      <span class="kicker">IP × UI DESIGN · VISUAL COMMUNICATION</span>
+    </div>
+    <div class="brandline" style="margin-top:14px"><i></i>齐云山 · 南酸枣糕</div>
+    <h1>山野册页<span>五福小集</span></h1>
+    <p class="lede">一本可以买的册页。<br>先读到山野，再顺手下单。<br><b>小野人「云怡」替你带路。</b></p>
+    <div class="meta-grid">
+      <div><b>25</b><span>SCREENS</span></div>
+      <div><b>05</b><span>LOOKS</span></div>
+      <div><b>02</b><span>LOOPS</span></div>
+    </div>
+    <div class="intro-actions">
+      <button class="btn-demo" data-tour="start">3 分钟演示 <span>→</span></button>
+      <button class="btn-text-link" data-reset="1">重置数据</button>
+    </div>
+    <div class="intro-foot">交互原型 / HTML PROTOTYPE<br>小野人 IP × 五福册页 · 2026</div>
+  </aside>
+
+  <main class="device-wrap">
+    <div class="device-label"><span><b id="page-code">H01</b></span><span id="page-name">开屏 / 品牌引导</span></div>
+    <div class="device" id="device">
+      <div class="phone" id="phone">
+        <div class="statusbar">
+          <span>9:41</span>
+          <div class="sb-icons"><i></i><i style="width:12px"></i><i style="width:22px;border-radius:2px"></i></div>
+        </div>
+        <div class="wx-capsule">
+          <span><span class="dots"><i></i><i></i><i></i></span></span>
+          <span><span class="ring"></span></span>
+        </div>
+        <div class="app" id="app"></div>
+      </div>
+    </div>
+    <div class="device-caption"><i></i>点击按钮、标签和卡片即可体验完整流程</div>
+  </main>
+
+  <aside class="index-panel">
+    <div class="panel-head"><span>PAGE INDEX</span><b>25</b></div>
+    <div class="panel-actions">
+      <button data-tour="start">播放演示</button>
+      <button data-reset="1">重置</button>
+    </div>
+    <div class="index-scroll" id="index"></div>
+    <div class="panel-foot">
+      <span class="swatches-mini">
+        <i style="background:#F0B01E"></i><i style="background:#E8912E"></i><i style="background:#A6321E"></i><i style="background:#5A8C3C"></i><i style="background:#C9A97E"></i><i style="background:#4A2C1A"></i>
+      </span>
+      <span>QYS / UI 2026</span>
+    </div>
+  </aside>
+</div>
+
+<div class="tour-layer" id="tour">
+  <div class="tour-box">
+    <div class="tour-top"><span id="tour-step">01 / 10</span><button id="tour-close" aria-label="关闭">×</button></div>
+    <h3 id="tour-title">从一本册页开始</h3>
+    <p id="tour-desc">首页不是货架，是一页山野。先看叙事，再进入商品。</p>
+    <div class="tour-bar"><i id="tour-progress" style="width:10%"></i></div>
+    <div class="tour-actions"><button id="tour-prev">上一步</button><button class="next" id="tour-next">下一步 →</button></div>
+  </div>
+</div>
+<div id="toast"></div>
+
+<svg class="sprite" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 11.2 12 4l8.5 7.2"/><path d="M5.6 9.8V20h12.8V9.8"/><path d="M9.6 20v-5.4h4.8V20"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6.4" height="6.4" rx="1.4"/><rect x="13.6" y="4" width="6.4" height="6.4" rx="1.4"/><rect x="4" y="13.6" width="6.4" height="6.4" rx="1.4"/><rect x="13.6" y="13.6" width="6.4" height="6.4" rx="1.4"/></symbol>
+  <symbol id="i-seal" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8 8.6h8M8 12h5.4M8 15.4h8"/></symbol>
+  <symbol id="i-basket" viewBox="0 0 24 24"><path d="M4.6 9.4h14.8l-1.3 10.1H5.9z"/><path d="M8.2 9.4c0-3.2 1.5-5.4 3.8-5.4s3.8 2.2 3.8 5.4"/><path d="M9 13.2v3.2M12 13.2v3.2M15 13.2v3.2"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c.8-4 3.3-6.1 7-6.1s6.2 2.1 7 6.1"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.2"/><path d="m15.4 15.4 4.2 4.2"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h14.2M13 6.2l5.7 5.8-5.7 5.8"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.6-4.6-7.6-10.1C4.4 6.8 6.4 5 9 5c1.5 0 2.5.8 3 1.7C12.5 5.8 13.5 5 15 5c2.6 0 4.6 1.8 4.6 4.9C19.6 15.4 12 20 12 20Z"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3.8 5h2.1l2.2 10.2h9.5l2-7.6H7"/><circle cx="9.4" cy="19" r="1.2"/><circle cx="17.2" cy="19" r="1.2"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.3"/><circle cx="17.6" cy="6.2" r="2.3"/><circle cx="17.6" cy="17.8" r="2.3"/><path d="m8.1 10.9 7.4-3.6M8.1 13.1l7.4 3.6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.3 4.3L19.4 6.6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.8 2.5 5.1 5.6.8-4 3.9.9 5.6-5-2.6-5 2.6.9-5.6-4-3.9 5.6-.8z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-coupon" viewBox="0 0 24 24"><path d="M4 7.5h16v3a2 2 0 0 0 0 3.9v3.1H4v-3.1a2 2 0 0 0 0-3.9z"/><path d="M9 8.4v7.2" stroke-dasharray="1.6 2.2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6.5-5.7 6.5-11A6.5 6.5 0 0 0 5.5 10c0 5.3 6.5 11 6.5 11Z"/><circle cx="12" cy="10" r="2.2"/></symbol>
+  <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4.5 13v-1a7.5 7.5 0 0 1 15 0v1"/><rect x="3.4" y="12.4" width="3.6" height="6.2" rx="1.2"/><rect x="17" y="12.4" width="3.6" height="6.2" rx="1.2"/><path d="M19 18.6c0 1.6-1.8 2.7-4.4 2.7"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="m4 7.5 8-3.8 8 3.8v9L12 20.4 4 16.5z"/><path d="m4 7.5 8 4 8-4M12 11.5v8.9"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3.5 6.5h10v9.4h-10z"/><path d="M13.5 9.5h4l3 3.2v3.2h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.2" cy="18" r="1.6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.6 19 6v5.4c0 4.4-2.8 7.4-7 9-4.2-1.6-7-4.6-7-9V6z"/><path d="m8.7 11.8 2.2 2.2 4.4-4.6"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5.2-13 14-13 0 8-5.2 13-14 13Z"/><path d="M5 19c2.8-4.4 6-7.2 10-9"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3.5c.5 4.6 2 6.1 6.5 6.6-4.5.5-6 2-6.5 6.6-.5-4.6-2-6.1-6.5-6.6 4.5-.5 6-2 6.5-6.6Z"/><path d="M18.2 15.5c.2 1.8.8 2.4 2.6 2.6-1.8.2-2.4.8-2.6 2.6-.2-1.8-.8-2.4-2.6-2.6 1.8-.2 2.4-.8 2.6-2.6Z"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><rect x="3.5" y="7" width="17" height="12.5" rx="2.2"/><path d="m8 7 1.4-2.2h5.2L16 7"/><circle cx="12" cy="13.2" r="3.3"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="m5 16.8-.8 3.9 3.9-.8L19.4 8.6l-3.1-3.1z"/><path d="m14.8 7 3.1 3.1"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M5.5 7.5h13M9 7.5V5h6v2.5M7 7.5l.9 12h8.2l.9-12"/><path d="M10.2 11v5M13.8 11v5"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><path d="M4 9.5h16v3H4zM5.5 12.5h13v8h-13z"/><path d="M12 9.5v11M12 9.5C9 9.5 7.2 8.6 7.2 6.7c0-1.4 1-2.2 2.2-2.2 1.8 0 2.6 2.6 2.6 5ZM12 9.5c3 0 4.8-.9 4.8-2.8 0-1.4-1-2.2-2.2-2.2-1.8 0-2.6 2.6-2.6 5Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2"/><path d="M12 7.4V12l3.2 2"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M19 8.5A8 8 0 1 0 20 12"/><path d="M19 4.5v4.2h-4.2"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 10.8v5M12 7.8v.4"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5.5" y="10" width="13" height="9.5" rx="2.2"/><path d="M8.2 10V7.7a3.8 3.8 0 0 1 7.6 0V10"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M7.2 4.2h9.6v15.6H7.2z"/><path d="M10.5 17.6h3"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="13" rx="2.5"/><path d="M4 9.5h16M15.5 14.2h1.8"/></symbol>
+  <symbol id="i-footprint" viewBox="0 0 24 24"><path d="M8.5 4.5c2 1.3 3.2 3.8 3.2 6.5 0 2.1-1 3.2-2.5 3.2-1.8 0-3-1.5-3-3.8 0-2.6.9-4.8 2.3-5.9Z"/><path d="M6.2 16.3c1.5-.4 2.6.3 2.8 1.7.2 1.6-.6 2.7-1.9 2.7-1.3 0-2.2-1.1-2-2.5.1-.9.5-1.6 1.1-1.9Z"/><path d="M15.5 7.4c1.6.9 2.7 2.8 2.7 4.9 0 1.7-.9 2.7-2.2 2.7-1.5 0-2.5-1.2-2.5-3.1 0-2 .8-3.7 2-4.5Z"/><path d="M14.1 17.7c1.2-.3 2.1.3 2.3 1.4.2 1.3-.5 2.2-1.6 2.2-1.1 0-1.8-.9-1.6-2.1.1-.7.4-1.3.9-1.5Z"/></symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24"><path d="m4 8 4.4 3.3L12 5l3.6 6.3L20 8l-1.4 9.2H5.4z"/><path d="M5.4 20h13.2"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="18.5" cy="12" r="1.2"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+</svg>
+
+<script src="app.js"></script>
+</body>
+</html>
